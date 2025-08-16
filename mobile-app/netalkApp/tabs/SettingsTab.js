@@ -3,6 +3,7 @@ import TcpSocket from 'react-native-tcp-socket';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert } from 'react-native';
 import { styles } from '../App'; 
 import { useConnection } from '../ConnectionContext';
+import { useUser } from '../UserContext';
 
 export default function SettingsTab() {
     const [btnConnectTxt, setBtnConnectTxt] = useState("Connect");

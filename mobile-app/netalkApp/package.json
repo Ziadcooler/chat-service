@@ -20,7 +20,9 @@
     "react-native-tcp-socket": "^6.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@react-native-community/cli": "^20.0.0",
+    "react-native-codegen": "^0.70.7"
   },
   "private": true
 }
