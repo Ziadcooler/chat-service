@@ -7,7 +7,7 @@ import (
 	"github.com/getlantern/systray"
 )
 
-//go:embed assets\icon.ico
+//go:embed assets/icon.ico
 var iconData []byte
 
 func setupTray() {
@@ -23,20 +23,10 @@ func onReady() {
 
 	// add menu items
 	mQuit := systray.AddMenuItem("Quit", "Stop the server and exit")
-	mToggleConsole := systray.AddMenuItem("Show Console Window", "Show or hide the console window")
 
 	go func() {
 		for {
 			select {
-			case <-mToggleConsole.ClickedCh:
-				consoleVisible = !consoleVisible
-				showConsole(consoleVisible)
-
-				if consoleVisible {
-					mToggleConsole.SetTitle("Hide Console Window")
-				} else {
-					mToggleConsole.SetTitle("Show Console Window")
-				}
 			case <-mQuit.ClickedCh:
 				systray.Quit()
 				os.Exit(0)
@@ -47,5 +37,5 @@ func onReady() {
 }
 
 func onExit() {
-	freeConsole.Call()
+
 }
